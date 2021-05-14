@@ -14,7 +14,7 @@ function MovieList() {
     }, []);
 
     const movieClick = () => {
-        history.push('/detail')
+        history.push('/detail');
     }
 
     return (
