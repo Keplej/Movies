@@ -32,19 +32,13 @@ function* fetchAllMovies() {
 
 function* getMovieDetail (action) {
     try{
-        // 
         const response = yield axios.get(`/api/movie/${action.payload}`);
-        yield put({type: 'GET_MOVIE_DETAIL', payload: response.data})
+        yield put({type: 'SET_MOVIE_DETAIL', payload: response.data});
     } catch (error) {
         alert('ERROR IN DETAIL GET');
         console.log('Error in getMovieDetail', error);
     }
 }
-
-// function* rootSaga () {
-//     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
-    
-// }
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
@@ -69,7 +63,7 @@ const genres = (state = [], action) => {
     }
 }
 
-const detail = (state = [], action) => {
+const movieDetail = (state = [], action) => {
     if (action.type == 'GET_MOVIE_DETAILS') {
         return state.payload
     }
@@ -81,7 +75,7 @@ const storeInstance = createStore(
     combineReducers({
         movies,
         genres,
-        detail,
+        movieDetail,
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
