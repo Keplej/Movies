@@ -16,12 +16,16 @@ function MovieList() {
     const handleClick = (id) => {
         history.push('/detail');
         dispatch({type: 'GET_DETAIL', payload: id});
-        
+    }
+
+    const newMovieClick = () => {
+        history.push('/add');
     }
 
     return (
         <main>
-            <h1>MovieList</h1>
+            <h1>Movie List</h1>
+            <button onClick={newMovieClick}>Add New Movie</button>
             <section className="movies">
                 {movies.map(movie => {
                     return (

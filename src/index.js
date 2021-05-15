@@ -15,6 +15,7 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('GET_DETAIL', getMovieDetail);
+    yield takeEvery('GET_GENRE', getMovieGenre);
     yield takeEvery('POST_MOVIE', moviePost);
 }
 
@@ -42,8 +43,19 @@ function* getMovieDetail (action) {
     }
 }
 
-// Adding in a post the movies on the details page
-// Testing to see if the title will show up on details page
+// Creating a function for genre
+
+function* getMovieGenre () {
+    try {
+        const response = yield axios.get('/api/genre');
+        yield put({type: 'SET_GENRES', payload: response.data})
+    } catch (error) {
+        alert('ERROR IN GET MOVIE GENRE')
+        console.log('get movei genre', error);
+    }
+}
+
+// Adding in a post the movies on the add page
 // Add the rest for poster and description
 function* moviePost (action) {
     try{
@@ -53,7 +65,6 @@ function* moviePost (action) {
         
     }
 } 
-
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();

@@ -34,17 +34,5 @@ function MovieDetail() {
     )
 }
 
-// key={movie.id}
-
-{/* <img src={detailSelector.poster} alt={detailSelector.title}/> */}
-
-// {movies.map(movie => {
-//     return (
-//         <div onClick={() => handleClick(movie.id)} key={movie.id} >
-//             <h3>{movie.title}</h3>
-//             <img src={movie.poster} alt={movie.title}/>
-//         </div>
-
-// INSERT INTO "movies" ("title", "poster", "description")
 
 export default MovieDetail; 
