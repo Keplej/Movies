@@ -55,14 +55,15 @@ function* getMovieGenre () {
     }
 }
 
-// Adding in a post the movies on the add page
+// Adding in a post the movies on the main page when done
 // Add the rest for poster and description
 function* moviePost (action) {
     try{
-        yield axios.post('/api/movie', {title: action.title});
+        yield axios.post('/api/movie', 
+        {title: action.title, poster: action.poster, description: action.description, genre_id: action.genre_id});
     } catch (error) {
+        alert('CANNOT SAVE MOVIE')
         console.log('ERROR IN POSTING MOVIE', error);
-        
     }
 } 
 

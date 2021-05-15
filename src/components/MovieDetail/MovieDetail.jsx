@@ -6,7 +6,7 @@ function MovieDetail() {
     
     const history = useHistory();
     const detailSelector = useSelector (store => store.movieDetail);
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     const listClick = () => {
         history.push('/');
