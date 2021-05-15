@@ -14,8 +14,9 @@ function MovieList() {
     }, []);
 
     const handleClick = (id) => {
-        dispatch({type: 'GET_DETAIL', payload: id});
         history.push('/detail');
+        dispatch({type: 'GET_DETAIL', payload: id});
+        
     }
 
     return (
@@ -24,9 +25,9 @@ function MovieList() {
             <section className="movies">
                 {movies.map(movie => {
                     return (
-                        <div onClick={() => handleClick(movie.id)} key={movie.id} >
+                        <div key={movie.id} >
                             <h3>{movie.title}</h3>
-                            <img src={movie.poster} alt={movie.title}/>
+                            <img src={movie.poster} alt={movie.title} onClick={() => handleClick(movie.id)}/>
                         </div>
                     );
                 })}

@@ -1,11 +1,17 @@
-import { useSelector } from "react-redux";
-import { useHistory } from "react-router"
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
 
 
 function MovieDetail() {
     
     const history = useHistory();
-    const detailSelector = useSelector (state => state.movieDetail);
+    const detailSelector = useSelector (store => store.movieDetail);
+    const dispatch = useDispatch();
+
+    // useEffect(() => {
+    //     dispatch({ type: 'GET_DETAIL', payload: params.id});
+    // }, []);
 
     const listClick = () => {
         history.push('/');
@@ -14,11 +20,12 @@ function MovieDetail() {
 
     return (
         <div>
-            {detailSelector.map((test) => {
+            {detailSelector.map((movie) => {
                 return (
-                    <div>
-                        <h3>{test.title}</h3>
-                        <img src={test.poster} alt={test.title}/>
+                    <div key={movie.id}>
+                        <h3>{movie.title}</h3>
+                        <img src={movie.poster} alt={movie.title}/>
+                        <ul>{movie.description}</ul>
                     </div>
                 )
             })}    
@@ -26,6 +33,8 @@ function MovieDetail() {
         </div>
     )
 }
+
+// key={movie.id}
 
 {/* <img src={detailSelector.poster} alt={detailSelector.title}/> */}
 

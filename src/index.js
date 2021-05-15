@@ -15,6 +15,7 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('GET_DETAIL', getMovieDetail);
+    yield takeEvery('POST_MOVIE', moviePost);
 }
 
 function* fetchAllMovies() {
@@ -30,15 +31,29 @@ function* fetchAllMovies() {
         
 }
 
+// Movie detail for MovieDetail page
 function* getMovieDetail (action) {
     try{
         const response = yield axios.get(`/api/movie/${action.payload}`);
-        yield put({type: 'SET_MOVIE_DETAIL', payload: response.data});
+        yield put({type: 'SET_DETAIL', payload: response.data});
     } catch (error) {
         alert('ERROR IN DETAIL GET');
         console.log('Error in getMovieDetail', error);
     }
 }
+
+// Adding in a post the movies on the details page
+// Testing to see if the title will show up on details page
+// Add the rest for poster and description
+function* moviePost (action) {
+    try{
+        yield axios.post('/api/movie', {title: action.title});
+    } catch (error) {
+        console.log('ERROR IN POSTING MOVIE', error);
+        
+    }
+} 
+
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
@@ -63,11 +78,15 @@ const genres = (state = [], action) => {
     }
 }
 
+// Movie detail for MovieDetail page
 const movieDetail = (state = [], action) => {
-    if (action.type == 'GET_MOVIE_DETAILS') {
-        return state.payload
+    switch (action.type) {
+        case 'SET_DETAIL':
+            return action.payload;
+        default:
+            return state;
     }
-    return state;
+    
 }
 
 // Create one store that all components can use

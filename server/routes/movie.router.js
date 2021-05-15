@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 // Adding for getting movies to show up on detail
 router.get('/:id', (req, res) => {
   let movieTest = req.params.id;
-  const queryText = `SELECT * FROM movies WHERE id = $1;`;
+  const queryText = `SELECT * FROM "movies" WHERE "id" = $1;`;
   pool.query(queryText, [movieTest])
     .then( result => {
       res.send(result.rows);
