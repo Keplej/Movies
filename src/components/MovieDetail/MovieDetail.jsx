@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 
@@ -8,10 +7,6 @@ function MovieDetail() {
     const history = useHistory();
     const detailSelector = useSelector (store => store.movieDetail);
     const dispatch = useDispatch();
-
-    // useEffect(() => {
-    //     dispatch({ type: 'GET_DETAIL', payload: params.id});
-    // }, []);
 
     const listClick = () => {
         history.push('/');

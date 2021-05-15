@@ -1,12 +1,22 @@
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router";
 
 
 function AddMovies() {
     const history = useHistory();
+    const dispatch = useDispatch();
 
     const mainPageClick = () => {
         history.push('/')
     }
+
+    const genre = useSelector(store => store.genres);
+
+    useEffect(() => {
+        dispatch({type: 'GET_GENRE'});
+    }, [])
+
 
     return (
         <div>
@@ -20,7 +30,13 @@ function AddMovies() {
                 </textarea>
                 <br />
             <h3>Movie genre</h3>
-            <select></select>
+            <select>
+                {genre.map((item) => {
+                    return (
+                        <option key={item.id} value={item.id}>{item.name}</option>
+                    )
+                })}
+            </select>
             <br />
             <button>Save</button>
             <button onClick={mainPageClick}>Cancel</button>
