@@ -9,15 +9,17 @@ function MovieList() {
     const movies = useSelector(store => store.movies);
     const history = useHistory();
 
+    // Get information from the index.js
     useEffect(() => {
         dispatch({ type: 'FETCH_MOVIES' });
     }, []);
 
+    // This gets the information so we can see it on the details page.
     const handleClick = (id) => {
         history.push('/detail');
         dispatch({type: 'GET_DETAIL', payload: id});
     }
-
+    // This brings us back to the main page
     const newMovieClick = () => {
         history.push('/add');
     }

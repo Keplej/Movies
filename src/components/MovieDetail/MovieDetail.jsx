@@ -10,6 +10,7 @@ function MovieDetail() {
     const detailSelector = useSelector (store => store.movieDetail);
     // const dispatch = useDispatch();
 
+    // This brings us back to the main page
     const listClick = () => {
         history.push('/');
     }

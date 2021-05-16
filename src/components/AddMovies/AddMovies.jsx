@@ -24,7 +24,7 @@ function AddMovies() {
         dispatch({type: 'GET_GENRE'});
     }, [])
 
-
+    // this grabs and posts all the information
     const handleSubmit = (event) => {
         event.preventDefault;
         dispatch({type: 'POST_MOVIE', title: titleMovie, poster: urlMovie, description: descriptionMovie, genre_id: genreid });
