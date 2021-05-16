@@ -4,8 +4,6 @@ _Duration: One Weekend_
 
 With this app, the main objective was making a movie list that when clicking on an image will take you to the page of the image you clicked on to see the descriptions. The other objective was to add a movie with a movie name, image url, and a description. How this was solved as using saga functions in the index.js, setting up router inputs to store the information on a database, and making the different pages that pull down information on specific movies. By using a map function to get and push the data the user has either added or gotten we solved this problem.
 
-Screen Shot
-Include one or two screen shots of your project here (optional). Remove if unused.
 
 ## Prerequisites
 Link to software that is required to install the app (e.g. node).
