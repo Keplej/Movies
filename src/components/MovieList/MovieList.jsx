@@ -1,3 +1,4 @@
+import { Card } from '@material-ui/core';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
@@ -23,6 +24,7 @@ function MovieList() {
     const newMovieClick = () => {
         history.push('/add');
     }
+    
 
     return (
         <main className="movielist">
@@ -31,10 +33,10 @@ function MovieList() {
             <section className="movies">
                 {movies.map(movie => {
                     return (
-                        <div key={movie.id} >
-                            <h3>{movie.title}</h3>
+                        <Card className="card" key={movie.id} >
+                            <Card title>{movie.title}</Card>
                             <img src={movie.poster} alt={movie.title} onClick={() => handleClick(movie.id)}/>
-                        </div>
+                        </Card>
                     );
                 })}
             </section>

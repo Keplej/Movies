@@ -1,6 +1,6 @@
 .movies {
   display: grid;
-  grid-gap: 50px 1px;
+  grid-gap: 50px 100px;
   grid-template-columns: auto auto auto;
   padding: 50px;
   background-color: rgba(255, 255, 255, 0.8);
@@ -9,19 +9,37 @@
   background-color: #f5f5f5;
 }
 
+.card {
+  width: 50%;
+  text-align: center;
+  width: 300px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.card img {
+  height: auto;
+  max-height: 250px;
+  width: auto;
+  max-width: 250px;
+}
+
 .moviebtn {
-display:inline-block;
-padding:0.35em 1.2em;
-border:0.1em solid #cc2222;
-margin:0 0.3em 0.3em 0;
-border-radius:0.12em;
-box-sizing: border-box;
-text-decoration:none;
-font-family:'Roboto',sans-serif;
-font-weight:300;
-color:#cc2222;
-text-align:center;
-transition: all 0.2s;
+  display:inline-block;
+  padding:0.35em 1.2em;
+  border:0.1em solid #cc2222;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:#cc2222;
+  text-align:center;
+  transition: all 0.2s;
 }
 
 .moviebtn:hover{
@@ -30,7 +48,7 @@ transition: all 0.2s;
 }
 
 .moviebtn {
-display:block;
-margin:0.4em auto;
+  display:block;
+  margin:0.4em auto;
 }
 
