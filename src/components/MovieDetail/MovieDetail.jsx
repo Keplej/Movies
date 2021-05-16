@@ -1,5 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
+import './MovieDetail.css'
+
 
 
 function MovieDetail() {
@@ -17,10 +19,10 @@ function MovieDetail() {
         <div>
             {detailSelector.map((movie) => {
                 return (
-                    <div key={movie.id}>
-                        <h3>{movie.title}</h3>
+                    <div className="moviedetail" key={movie.id}>
+                        <h2>{movie.title}</h2>
                         <img src={movie.poster} alt={movie.title}/>
-                        <ul>{movie.description}</ul>
+                        <p>{movie.description}</p>
                     </div>
                 )
             })}    

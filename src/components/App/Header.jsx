@@ -1,13 +1,13 @@
-// import HeaderStyles from './HeaderStyles.css';
 
-// function Header() {
+
+function Header() {
     
 
-//     return (
-//         <div class="test" style="width: 660px; text-align:left;">
-//             <h2>The Movies Saga!</h2>
-//         </div>
-//     )
-// }
+    return (
+        <div class="moviehead" >
+            <h2>The Movies Saga!</h2>
+        </div>
+    )
+}
 
-// export default Header; 
+export default Header; 

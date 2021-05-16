@@ -23,9 +23,9 @@ function MovieList() {
     }
 
     return (
-        <main>
-            <h1>Movie List</h1>
-            <button onClick={newMovieClick}>Add New Movie</button>
+        <main className="movielist">
+            {/* <h1>Movie List</h1> */}
+            <button className="moviebtn" onClick={newMovieClick}>Add New Movie</button>
             <section className="movies">
                 {movies.map(movie => {
                     return (

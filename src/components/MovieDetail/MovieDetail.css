@@ -1,16 +1,18 @@
-.movies {
-  display: grid;
-  grid-gap: 50px 1px;
-  grid-template-columns: auto auto auto;
-  padding: 50px;
-  background-color: rgba(255, 255, 255, 0.8);
-  font-size: 20px;
-  text-align: center;
-  background-color: #f5f5f5;
+.moviedetail p {
+    margin-inline: 10px;
+    text-align: justify;
+    margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 180px;
 }
 
-.moviebtn {
-display:inline-block;
+.moviedetail h3 {
+    
+}
+
+button {
+    display:inline-block;
 padding:0.35em 1.2em;
 border:0.1em solid #cc2222;
 margin:0 0.3em 0.3em 0;
@@ -24,13 +26,16 @@ text-align:center;
 transition: all 0.2s;
 }
 
-.moviebtn:hover{
+button:hover {
     color:#fff;
     background-color:#cc2222;
 }
 
-.moviebtn {
+button {
 display:block;
 margin:0.4em auto;
 }
 
+body {
+    background-color: #f5f5f5;;
+}
