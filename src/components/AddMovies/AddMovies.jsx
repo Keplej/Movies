@@ -26,8 +26,8 @@ function AddMovies() {
 
     // this grabs and posts all the information
     const handleSubmit = (event) => {
-        event.preventDefault;
-        dispatch({type: 'POST_MOVIE', title: titleMovie, poster: urlMovie, description: descriptionMovie, genre_id: genreid });
+        event.preventDefault();
+        dispatch({type: 'POST_MOVIE', title: titleMovie, poster: urlMovie, description: descriptionMovie, genre_id: genreid});
         history.push('/');
     }
 
@@ -39,6 +39,7 @@ function AddMovies() {
                 onChange={(event) => setTitleMovie(event.target.value)}/>
             <h3>Image Url</h3>
                 <input
+                required
                 type="text" placeholder="Image URL here"
                 value={urlMovie} 
                 onChange={(event) => setUrlMovie(event.target.value)}

@@ -22,6 +22,7 @@ function MovieDetail() {
                 return (
                     <div className="moviedetail" key={movie.id}>
                         <h2>{movie.title}</h2>
+                        <h3>Genre: {movie.genres}</h3>
                         <img src={movie.poster} alt={movie.title}/>
                         <p>{movie.description}</p>
                     </div>

@@ -17,9 +17,17 @@ router.get('/', (req, res) => {
 });
 
 // Adding for getting movies to show up on detail
+// Adding in genres
+
+
 router.get('/:id', (req, res) => {
   let movieTest = req.params.id;
-  const queryText = `SELECT * FROM "movies" WHERE "id" = $1;`;
+  const queryText = `SELECT "movies".title, "movies".poster, "movies".description, 
+  STRING_AGG("genres".name, ', ') AS "genres" FROM "movies"
+  JOIN "movies_genres" ON "movies".id = "movies_genres".id
+  JOIN "genres" ON "movies_genres".genre_id = "genres".id
+  WHERE "movies".id = $1
+  GROUP BY "movies".title, "movies".poster, "movies".description;`;
   pool.query(queryText, [movieTest])
     .then( result => {
       res.send(result.rows);

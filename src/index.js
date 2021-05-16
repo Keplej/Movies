@@ -60,7 +60,9 @@ function* getMovieGenre () {
 function* moviePost (action) {
     try{
         yield axios.post('/api/movie', 
-        {title: action.title, poster: action.poster, description: action.description, genre_id: action.genre_id});
+        {title: action.title, poster: action.poster, description: action.description, genre_id: action.genre_id}
+        );
+        yield put({type: 'FETCH_MOVIES'})
     } catch (error) {
         alert('CANNOT SAVE MOVIE')
         console.log('ERROR IN POSTING MOVIE', error);

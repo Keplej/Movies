@@ -31,9 +31,9 @@
   margin: 0 auto;
   background-color: #cc2222;
   opacity: 0.8;
-  background-image: radial-gradient(#f5f5f5 0.5px, #cc2222 0.5px);
+  /* The dots in the radial-gradient are only showing up on a smaller screen which is weird?? */
+  background-image: radial-gradient(#f5f5f5 .5px, #cc2222 0.5px);
   background-size: 10px 10px;
-  /* background-color: #cc2222; */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
