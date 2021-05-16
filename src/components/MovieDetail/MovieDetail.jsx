@@ -18,6 +18,7 @@ function MovieDetail() {
 
     return (
         <div>
+            <button onClick={listClick}>Movie List</button>
             {detailSelector.map((movie) => {
                 return (
                     <div className="moviedetail" key={movie.id}>
@@ -28,7 +29,6 @@ function MovieDetail() {
                     </div>
                 )
             })}    
-            <button onClick={listClick}>Movie List</button>
         </div>
     )
 }

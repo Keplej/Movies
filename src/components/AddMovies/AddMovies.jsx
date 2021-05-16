@@ -39,7 +39,6 @@ function AddMovies() {
                 onChange={(event) => setTitleMovie(event.target.value)}/>
             <h3>Image Url</h3>
                 <input
-                required
                 type="text" placeholder="Image URL here"
                 value={urlMovie} 
                 onChange={(event) => setUrlMovie(event.target.value)}
